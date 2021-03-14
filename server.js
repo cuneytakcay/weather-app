@@ -1,11 +1,26 @@
+const path = require('path')
 const express = require('express')
+const hbs = require('hbs')
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
+// Define paths
+const publicDirPath = path.join(__dirname, '/public')
+const partialsDirPath = path.join(__dirname, '/views/partials')
+
+// Set up templating engine
+app.set('view engine', 'hbs')
+hbs.registerPartials(partialsDirPath)
+
+// Access public directory to use static files
+app.use(express.static(publicDirPath))
+
 // Routes - Home
 app.get('/', (req, res) => {
-	res.send('Weather App, in progress...')
+	res.render('index', {
+		title: 'Check Weather',
+	})
 })
 
 app.listen(PORT, () => {
