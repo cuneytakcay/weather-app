@@ -10,7 +10,19 @@
 </head>
 <body>
 	{{>header}}
-	<h2>{{title}}</h2>
+
+	<div class="main-container">
+		<h2>{{title}}</h2>
+
+		<form>
+			<label for="location">Location</label>
+			<div class="location">
+				<input id="location" type="text" placeholder="Address, city, region...">
+				<button>Search</button>
+			</div>
+		</form>
+	</div>
+
 	{{>footer}}
 </body>
 </html>
