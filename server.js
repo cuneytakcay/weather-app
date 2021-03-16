@@ -3,7 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = 3000
 
 // Define paths
 const publicDirPath = path.join(__dirname, '/public')
